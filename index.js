@@ -7,23 +7,61 @@ app.use(express.json());
 app.use(cors());
 
 app.post('/save-json', (req, res) => {
-  const data = req.body;
-  fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send('Ошибка при записи файла');
-    }
-    res.send('Данные успешно записаны');
+  const newData = req.body; // Изменили имя переменной на newData
+  
+  fs.readFile('data.json', 'utf8', (err, fileData) => { // Изменили имя переменной на fileData
+    
+    fs.stat('data.json', (err, stats) => {
+        if(stats.size === 0) {
+            let arr = [newData];
+            fs.writeFile('data.json', JSON.stringify(arr, null, 2), (writeErr) => {
+                if (writeErr) {
+                    console.error(writeErr);
+                    return res.status(500).send('Ошибка при записи файла');
+                }
+                res.send('Данные успешно записаны');
+            });
+        } else {
+            let dataArray = [];
+    
+            dataArray = JSON.parse(fileData); // Используем fileData здесь
+            
+            //const hasElement = dataArray.includes(newData);
+            
+            let hasElement0 = dataArray.some(element => element.bookmarkName === newData.bookmarkName);
+            let hasElement1 = dataArray.some(element => element.bookmarkDescription === newData.bookmarkDescription);
+            
+            if(!(hasElement0 && hasElement1)) {
+                dataArray.push(newData); // Используем newData здесь
+    
+                fs.writeFile('data.json', JSON.stringify(dataArray, null, 2), (writeErr) => {
+                if (writeErr) {
+                console.error(writeErr);
+                    return res.status(500).send('Ошибка при записи файла');
+                }
+                res.send('Данные успешно записаны');
+                });
+            }
+        }
+    });
   });
 });
 
 app.get('/get-json', (req, res) => {
   fs.readFile('data.json', 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send('Ошибка при чтении файла');
-    }
-    res.send(data);
+  
+    fs.stat('data.json', (err, stats) => {
+        if(stats.size === 0) {
+            let sendData = new Array(1);
+            res.send([]);
+        } else {
+            if (err) {
+            console.error(err);
+            return res.status(500).send('Ошибка при чтении файла');
+            }
+            res.send(data);
+        }
+    });
   });
 });
 
