@@ -47,6 +47,7 @@ app.post('/save-json', (req, res) => {
   });
 });
 
+
 app.get('/get-json', (req, res) => {
   fs.readFile('data.json', 'utf8', (err, data) => {
   
@@ -64,6 +65,33 @@ app.get('/get-json', (req, res) => {
     });
   });
 });
+
+
+app.delete('/items', (req, res) => {
+  const queryParams = req.query;
+  
+  fs.readFile('data.json', 'utf8', (err, fileData) => {
+        let dataArray = [];
+    
+        dataArray = JSON.parse(fileData);
+        
+        const index0 = dataArray.findIndex(element => element.bookmarkName === queryParams.param1);
+        const index1 = dataArray.findIndex(element => element.bookmarkDescription === queryParams.param2);
+        
+        if(index0 === index1) {
+            dataArray.splice(index0, 1);
+        }
+        
+        fs.writeFile('data.json', JSON.stringify(dataArray, null, 2), (writeErr) => {
+                if (writeErr) {
+                    console.error(writeErr);
+                    return res.status(500).send('Ошибка при записи файла');
+                }
+                res.send('Данные успешно удалены');
+            });
+  });
+});
+
 
 app.listen(3000, () => {
   console.log('Сервер запущен на порту 3000');
