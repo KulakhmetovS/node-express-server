@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "bookmarkImage": "http://books.google.com/books/content?id=xePIEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "bookmarkName": "All sciences. No3, 2023. International Scientific Journal",
+    "bookmarkAuthor": [
+      "Sultonali Abduraxmonov",
+      "Foziljon Obidov",
+      "Ibratjon Aliyev",
+      "Sanjar Odilov",
+      "Nurmuxammad Toyirov",
+      "Toira Abdusalyamova"
+    ],
+    "bookmarkDescription": "The international scientific journal “All Sciences”, created at OOO “Electron Laboratory” and the Scientific School “Electron”, is a scientific publication that publishes the latest scientific results in various fields of science and technology, also representing a collection of publications on the above topics by a board of authors and reviewed by the editorial Board (academic Council) of the Scientific School “Eletkron” and on the Ridero platform monthly."
+  },
+  {
+    "bookmarkImage": "http://books.google.com/books/content?id=8z3ADwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "bookmarkName": "Повелители DOOM. Как два парня создали культовый шутер и раскачали индустрию видеоигр",
+    "bookmarkAuthor": [
+      "Дэвид Кушнер"
+    ],
+    "bookmarkDescription": "DOOM – это не просто игра. Это живая легенда. 25 лет назад она покорила десятки миллионов геймеров и изменила индустрию видеоигр навсегда. Как известно, за легендарными вещами всегда стоит не менее легендарная история их создания.В этой книге вас ждет история о том, как начинали свой путь Джон Кармак и Джон Ромеро, создатели культовых шутеров от первого лица, и как они стали рок-звездами игровой индустрии. Вы узнаете, с какими трудностями они сталкивались, чем им проходилось жертвовать, как реагировала общественность, пытаясь запретить первые по-настоящему жестокие игры, и многое другое!Содержит нецензурную браньВ формате a4.pdf сохранен издательский макет."
+  },
+  {
+    "bookmarkImage": "http://books.google.com/books/content?id=jQx-AgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "bookmarkName": "Наука и техника No10/2010",
+    "bookmarkDescription": "«Наука и техника» – ежемесячный научно-популярный историко-технический иллюстрированный журнал с интересной информацией от ведущих ученых и специалистов из разных областей знаний: архитектура, химия, биология, военная история и техника, археология, оружие.В номере:Градостроение и архитектураГород-лилияМедицина и фармакологияСердце КощеяАвтомототехникаРоллс-РойсВ мире интересногоДесять надежд Урбена ЛеверьеАстрономия, астрофизика и космонавтикаНокаут для планетыХимия и биологияБионанотехнологии – квинтэссенция современной наукиИстория и археологияАлександрийская кампания Юлия Цезаря. Часть 3и многое другое"
+  }
+]
